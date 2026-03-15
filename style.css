@@ -1,0 +1,251 @@
+:root {
+    --bg: #0a0a09;
+    --bg-nav: rgba(10, 10, 9, 0.85);
+
+    --surface: #111111;
+    --border: rgba(255, 255, 255, 0.1);
+
+    --text: #ffffff;
+    --text-dim: #9b9588;
+    --text-faint: #6b665d;
+
+    --orange: #D97757;
+    --white: #ffffff;
+    --black: #0d0d0d;
+
+    --serif: 'Andada Pro', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(217, 119, 87, 0.015) 0%, transparent 80%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px 140px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.display-1 {
+    font-family: var(--serif);
+    font-size: clamp(80px, 15vw, 160px);
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -6px;
+    margin-bottom: 40px;
+}
+
+.display-answer {
+    transition: color 0.4s ease;
+}
+
+.display-answer.active {
+    color: var(--orange);
+}
+
+.display-answer.inactive {
+    color: var(--text);
+}
+
+.hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-bottom: 56px;
+    font-weight: 400;
+}
+
+/* --- command_combo_wrap: Official Design --- */
+.command_combo_wrap {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.command_combo_wrap:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Status Label on the LEFT */
+.status_label {
+    background: var(--white);
+    color: var(--black);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: var(--sans);
+}
+
+/* Command Content on the RIGHT */
+.command_combo_content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+    padding-left: 20px;
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--text);
+    gap: 12px;
+}
+
+.cmd-kw {
+    color: var(--white);
+}
+
+.cmd-value {
+    color: var(--orange);
+}
+
+.share_button {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: var(--text-faint);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: color 0.1s, background 0.1s;
+    flex-shrink: 0;
+}
+
+.share_button:focus {
+    outline: none;
+}
+
+.share_button:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Hero Footer --- */
+.hero_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.hero-link {
+    font-size: 14px;
+    color: var(--text-faint);
+}
+
+.hero-link a {
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Bottom Progress --- */
+.bottom-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+}
+
+.progress-title {
+    font-size: 11px;
+    font-family: var(--sans);
+    font-weight: 500;
+    color: var(--text-faint);
+}
+
+.progress-pct {
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--orange);
+}
+
+.progress-track {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--orange);
+}
+
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 72px;
+        letter-spacing: -3px;
+    }
+
+    .command_combo_wrap {
+        flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .status_label {
+        width: 100%;
+        text-align: center;
+    }
+
+    .command_combo_content {
+        padding: 12px 14px;
+        border-top: 1px solid var(--border);
+        width: 100%;
+    }
+}

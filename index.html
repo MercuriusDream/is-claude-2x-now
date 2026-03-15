@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Claude 2x Now?</title>
+    <meta name="description"
+        content="Check if Claude's usage cap is currently doubled during the March 2026 promotion.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Is Claude 2x Now?">
+    <meta property="og:description" content="Check if Claude's usage cap is currently doubled during the March 2026 promotion.">
+    <meta property="og:url" content="https://isclaude2xnow.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Is Claude 2x Now?">
+    <meta name="twitter:description" content="Check if Claude's usage cap is currently doubled during the March 2026 promotion.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <main class="hero">
+        <!-- Minimal Display -->
+        <h1 class="display-1">
+            <span class="display-answer" id="big-answer">...</span>
+        </h1>
+
+        <!-- Funny Description -->
+        <p class="hero-sub" id="hero-sub">
+            Calculating your financial freedom...
+        </p>
+
+        <!-- Command Combo Wrap: BUTTON LEFT, CODE RIGHT -->
+        <div class="command_combo_wrap">
+            <div class="status_label" id="status-label">Loading...</div>
+
+            <div class="command_combo_content" id="main-display-area">
+                <span class="cmd-kw" id="display-label">peak in</span>
+                <span class="cmd-value" id="display-value">--:--:--</span>
+                <button class="share_button" id="share-btn" aria-label="Share">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                        <polyline points="16 6 12 2 8 6"></polyline>
+                        <line x1="12" y1="2" x2="12" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sub-link + Disclaimer -->
+        <div class="hero_footer">
+            <p class="hero-link">
+                <a href="https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+                    target="_blank" rel="noopener">About Promotion</a> /
+                <span>Not affiliated with <a href="https://anthropic.com" target="_blank" rel="noopener">Anthropic</a></span>
+                /
+                <span>Created by <a href="https://mercuriusdream.com" target="_blank"
+                        rel="noopener">Mercuriusdream</a></span>
+            </p>
+        </div>
+    </main>
+
+    <!-- Ultra-slim Bottom Progress -->
+    <footer class="bottom-progress">
+        <div class="progress-section">
+            <div class="progress-info">
+                <span id="progress-days" class="progress-title">... days left until end</span>
+                <span id="progress-pct" class="progress-pct">0%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
